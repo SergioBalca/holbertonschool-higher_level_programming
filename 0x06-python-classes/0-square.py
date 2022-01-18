@@ -3,4 +3,9 @@
 
 
 class Square:
-    pass
+    """Model of a Square"""
+
+    def __init__(self):
+        """__init method for the Square class"""
+
+        pass
