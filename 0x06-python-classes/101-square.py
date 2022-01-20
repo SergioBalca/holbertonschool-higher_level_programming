@@ -72,7 +72,9 @@ class Square:
         else:
             self.__position = value
 
-    """__str__ method is used to print a square instance, instead of my_print method"""
+    """__str__ method is used to print a
+    square instance, instead of my_print method
+    """
 
     def __str__(self):
         result = ""
