@@ -1,4 +1,4 @@
- #!/usr/bin/python3
+#!/usr/bin/python3
 
 """Class Rectangle definition"""
 
@@ -86,5 +86,3 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-
-
