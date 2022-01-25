@@ -1,0 +1,45 @@
+The ``4-print_square`` module
+==============================
+
+Using ``print_square``
+---------------------
+
+First import ``print_square`` from ``4-print_square`` module:
+
+	>>> print_square = __import__("4-print_square").print_square
+
+Now use it:
+
+	>>> print_square("2")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(size = 3)
+	###
+	###
+	###
+
+	>>> print_square(len = 3)
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() got an unexpected keyword argument 'len'
+
+	>>> print_square(-2)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+	>>> print_square(2 / 3)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(2 / 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+
+	>>> print_square(int("2"))
+	##
+	##

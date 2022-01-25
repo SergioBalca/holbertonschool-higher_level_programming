@@ -1,0 +1,67 @@
+The ``5-text_indentation`` module
+================================
+
+Using ``text_indentation``
+-------------------------
+
+First import ``text_indentation`` from the ``5-text_indentation`` module:
+
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Now use it:
+
+	>>> text_indentation("   Hello. -Hi")
+	Hello.
+	<BLANKLINE>
+	-Hi
+
+	>>> text_indentation("Hello?       I'm here.     ")
+	Hello?
+	<BLANKLINE>
+	I'm here.
+	<BLANKLINE>
+
+	>>> text_indentation("New line is coming...")
+	New line is coming.
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+
+	>>> text_indentation("Here's the new line '\n'     ")
+	Here's the new line '
+	'
+
+	>>> text_indentation("Really?!? Yes")
+	Really?
+	<BLANKLINE>
+	!?
+	<BLANKLINE>
+	Yes
+
+	>>> text_indentation("        ")
+
+	>>> text_indentation("")
+
+	>>> text_indentation("1","2", "3")
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+	>>> text_indentation(str(1. 2: 3? 4 5))
+	Traceback (most recent call last):
+		...
+		text_indentation(str(1. 2: 3? 4 5))
+					^
+	SyntaxError: invalid syntax
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
