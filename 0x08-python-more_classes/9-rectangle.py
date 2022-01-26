@@ -121,7 +121,8 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
-    """class method that returns a new Rectangle instance with width == height"""
+    """class method that returns a new Rectangle instance
+    with width == height"""
 
     @classmethod
     def square(cls, size=0):
