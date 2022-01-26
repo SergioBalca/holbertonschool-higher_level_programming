@@ -44,3 +44,8 @@ Now use it:
 		say_my_name( , "White")
 		     ^
 	SyntaxError: invalid syntax
+
+	>>> say_my_name("Walter", 23)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
