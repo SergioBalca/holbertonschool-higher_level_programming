@@ -6,7 +6,7 @@
 
 
 def lookup(obj):
-    
+
     """ Returns a list of attributes.
         Args:
             obj: is an object
