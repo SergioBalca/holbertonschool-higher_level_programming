@@ -6,6 +6,5 @@
 class BaseGeometry:
 
     """ BaseGeometry is an empty class"""
-
-    def ___init___(self):
-        pass
+    
+    pass
