@@ -4,7 +4,6 @@
 
 
 class MyInt(int):
-    
 
     """ method to define the reverse equality operator"""
 
