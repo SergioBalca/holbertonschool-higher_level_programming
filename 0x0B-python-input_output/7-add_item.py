@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-
+"""importing JSON module and sys module """
 import json
 import sys
+
+""" This module contains a script that loads a json file into a
+    python list and this list is save in a file
+"""
 
 """ From 5-save_to_json_file module import save_to_json_file """
 
