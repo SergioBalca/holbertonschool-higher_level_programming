@@ -13,7 +13,7 @@ def append_after(filename="", search_string="", new_string=""):
         file_lines = _file.readlines()
 
     with open(filename, mode='w', encoding='utf-8') as _file:
-        for i in range(len(lines)):
+        for i in range(len(file_lines)):
             if search_string in file_lines[i]:
                 file_lines[i] += new_string
         _file.writelines(file_lines)
