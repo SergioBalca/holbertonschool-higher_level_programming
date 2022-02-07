@@ -2,7 +2,7 @@
 
 """module with the Square class"""
 
-from  models.rectangle import Rectangle
+from models.rectangle import Rectangle
 
 """Square class inherits from Rectangle class"""
 
@@ -25,5 +25,3 @@ class Square(Rectangle):
             __class__.__name__, self.id, self.x,
             self.y, self.width
             )
-
-
