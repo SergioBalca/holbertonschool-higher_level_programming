@@ -5,6 +5,7 @@
 from cmath import rect
 from models.base import Base
 
+"""Rectangle class inherits from Base class"""
 
 class Rectangle(Base):
 
