@@ -2,6 +2,7 @@
 
 from models.base import Base
 import unittest
+import pycodestyle
 
 """module that contains unittests for Base class"""
 
@@ -9,6 +10,14 @@ import unittest
 
 
 class TestBase(unittest.TestCase):
+
+    def test_pep8(self):
+
+        """checks pep8 style guide on every file"""
+        pep8style = pycodestyle.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base.py'])
+        self.assertEqual(result.total_errors, 0, "Found code style error (and warnings).")
+
 
     def test_id(self):
 
