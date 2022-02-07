@@ -3,6 +3,7 @@
 """ module that has the rectagle class """
 
 from cmath import rect
+from ssl import ALERT_DESCRIPTION_BAD_CERTIFICATE_STATUS_RESPONSE
 from models.base import Base
 
 """Rectangle class inherits from Base class"""
@@ -104,3 +105,10 @@ class Rectangle(Base):
             __class__.__name__, self.id, self.__x,
             self.__y, self.__width, self.__height
         )
+
+    def update(self, *args):
+        """public method that assigns an argument to each attribute"""
+
+        attr_list = ["id", "width", "height", "x", "y"]
+        for key, value in zip(attr_list, args):
+            setattr(self, key, value)
