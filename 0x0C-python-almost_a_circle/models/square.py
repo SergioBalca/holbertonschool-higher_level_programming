@@ -25,3 +25,16 @@ class Square(Rectangle):
             __class__.__name__, self.id, self.x,
             self.y, self.width
             )
+
+    @property
+    def size(self):
+        """property to retrive size value"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ the Rectangle arguments validations are used to set
+            size value
+        """
+        self.width = value
+        self.height = value
