@@ -106,9 +106,13 @@ class Rectangle(Base):
             self.__y, self.__width, self.__height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """public method that assigns an argument to each attribute"""
 
-        attr_list = ["id", "width", "height", "x", "y"]
-        for key, value in zip(attr_list, args):
-            setattr(self, key, value)
+        if len(args) != 0:
+            attr_list = ["id", "width", "height", "x", "y"]
+            for key, value in zip(attr_list, args):
+                setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
