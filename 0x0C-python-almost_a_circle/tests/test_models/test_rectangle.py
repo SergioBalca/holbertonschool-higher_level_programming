@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-import re
-from unittest import result
 from models.rectangle import Rectangle
 from models.rectangle import Base
 import unittest
@@ -67,4 +65,17 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r_2.display(), "###\n###\n")
         self.assertEqual(r_3.display(), result_3)
     
-    
+    def test_update(self):
+
+        """Test for update method"""
+
+        r_1 = Rectangle(2, 2, 0, 0, 23)
+        r_1.update(3, 2, 1, 1, 25)
+        r_2 = Rectangle(2, 2, 1, 1, 30)
+        r_2.update(31, 2, 3, 1, 1)
+        r_3 = Rectangle(2, 2, 2, 2, 2)
+        r_3.update(88, 1, 1, 1, 1)
+
+        self.assertEqual(r_1.area(), 2)
+        self.assertEqual(r_2.display(), "\n ##\n ##\n ##\n")
+        self.assertEqual(r_3.id, 88)
