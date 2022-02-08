@@ -23,7 +23,7 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(r_1.id, 20)
         self.assertEqual(r_2.id, 12)
-        self.assertEqual(r_3.id, 5)
+        self.assertEqual(r_3.id, 7)
         self.assertEqual(r_4.id, -2)
 
     def test_attr_validation(self):
