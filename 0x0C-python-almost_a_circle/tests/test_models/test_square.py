@@ -20,10 +20,13 @@ class TestSquare(unittest.TestCase):
         s_1 = Square(5)
         s_2 = Square(2, 2)
         s_3 = Square(3, 1, 3)
+        s_4 = Square(3, 1, 3, 15)
+        s_4.update(1, 2, 3, 4)
 
         self.assertEqual(s_1.id, 10)
         self.assertEqual(s_2.area(), 4)
         self.assertEqual(s_3.display(), "\n\n\n ###\n ###\n ###\n")
+        self.assertEqual(s_4.x, 3)
 
     def test_attr_validation(self):
 
