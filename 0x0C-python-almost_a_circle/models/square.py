@@ -57,4 +57,8 @@ class Square(Rectangle):
         """ public method that returns the dictionray
             representation of a square class
         """
-        return vars(self)
+        key_list = ['id', 'size', 'x', 'y']
+        value_list = []
+        for key in key_list:
+            value_list.append(getattr(self, key))
+        return dict(zip(key_list, value_list))
