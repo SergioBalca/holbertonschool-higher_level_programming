@@ -2,8 +2,6 @@
 
 """ module that has the rectagle class """
 
-from cmath import rect
-from ssl import ALERT_DESCRIPTION_BAD_CERTIFICATE_STATUS_RESPONSE
 from models.base import Base
 
 """Rectangle class inherits from Base class"""
@@ -116,3 +114,10 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+
+        """ public method that returns the dictionary
+            representation of a Rectangle
+        """
+        return vars(self)
