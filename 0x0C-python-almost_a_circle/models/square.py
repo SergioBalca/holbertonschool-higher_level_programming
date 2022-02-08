@@ -38,3 +38,23 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+
+        """public method that assigns attributes by using args and kwargs"""
+
+        attr_list = ["id", "size", "x", "y"]
+        if len(args) != 0:
+            for key, value in zip(attr_list, args):
+                setattr(self, key, value)
+
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+
+        """ public method that returns the dictionray
+            representation of a square class
+        """
+        return vars(self)
