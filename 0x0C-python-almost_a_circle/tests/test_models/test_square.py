@@ -8,8 +8,9 @@ import unittest
 
 """TestSquare inherits from unittest.TestCase"""
 
+
 class TestSquare(unittest.TestCase):
-    
+
     def test_square(self):
 
         """ checks if Square handles attributes and methods
@@ -20,6 +21,19 @@ class TestSquare(unittest.TestCase):
         s_2 = Square(2, 2)
         s_3 = Square(3, 1, 3)
 
-        self.assertEqual(s_1.id, 8)
+        self.assertEqual(s_1.id, 10)
         self.assertEqual(s_2.area(), 4)
         self.assertEqual(s_3.display(), "\n\n\n ###\n ###\n ###\n")
+
+    def test_attr_validation(self):
+
+        """checks if arguments meet attributes requirements"""
+
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(-5)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square("4")
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            Square(5, -2, 0, 2)
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(2, 0, float('Nan'), 3)
