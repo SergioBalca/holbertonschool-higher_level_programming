@@ -120,4 +120,8 @@ class Rectangle(Base):
         """ public method that returns the dictionary
             representation of a Rectangle
         """
-        return vars(self)
+        key_list = ['id', 'width', 'height', 'x', 'y']
+        value_list = []
+        for key in key_list:
+            value_list.append(getattr(self, key))
+        return dict(zip(key_list, value_list))
