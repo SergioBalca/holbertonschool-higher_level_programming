@@ -46,3 +46,4 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string([dict_r1]), result)
         self.assertEqual(Base.to_json_string([]), "[]")
         self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([{'id': 12}]), '[{"id": 12}]')
