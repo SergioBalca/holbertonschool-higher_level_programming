@@ -7,9 +7,6 @@ import json
 
 class Base:
 
-    """ Private class attribute """
-    __nb_objects = 0
-
     @staticmethod
     def to_json_string(list_dictionaries):
 
@@ -23,6 +20,11 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
+
+    """ Private class attribute """
+    __nb_objects = 0
+
+    
 
     def __init__(self, id=None):
 
