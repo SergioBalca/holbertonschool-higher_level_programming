@@ -64,18 +64,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r_1.display(), "##\n##\n")
         self.assertEqual(r_2.display(), "###\n###\n")
         self.assertEqual(r_3.display(), result_3)
-    
-    def test_update(self):
 
-        """Test for update method"""
+    def test_to_dictionary(self):
 
-        r_1 = Rectangle(2, 2, 0, 0, 23)
-        r_1.update(3, 2, 1, 1, 25)
-        r_2 = Rectangle(2, 2, 1, 1, 30)
-        r_2.update(31, 2, 3, 1, 1)
-        r_3 = Rectangle(2, 2, 2, 2, 2)
-        r_3.update(88, 1, 1, 1, 1)
+        """Test for to_dictionary method"""
 
-        self.assertEqual(r_1.area(), 2)
-        self.assertEqual(r_2.display(), "\n ##\n ##\n ##\n")
-        self.assertEqual(r_3.id, 88)
+        r_1 = Rectangle(1, 2, 3, 4, 5)
+        r1_dictionary = r_1.to_dictionary()
+        r_2 = Rectangle(**r1_dictionary)
+        result = {'id': 5, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
+        self.assertEqual(r1_dictionary, result)
+        self.assertEqual(r_2.to_dictionary(), result)
