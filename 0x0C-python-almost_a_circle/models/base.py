@@ -24,6 +24,7 @@ class Base:
         else:
             self.id = id
 
+    @staticmethod
     def to_json_string(list_dictionaries):
 
         """ static method that returns the JSON string representation
