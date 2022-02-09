@@ -57,3 +57,12 @@ class TestSquare(unittest.TestCase):
 
         self.assertEqual(s1_dictionary, result)
         self.assertEqual(s_2.to_dictionary(), result)
+
+    def test__str__(self):
+
+        """Test for __str__ method"""
+
+        s_1 = Square(1, 2, 3, 4)
+        result = "[Square] (4) 2/3 - 1"
+
+        self.assertEqual(str(s_1), result)
