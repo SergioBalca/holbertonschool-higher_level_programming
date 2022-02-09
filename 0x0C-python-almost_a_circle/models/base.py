@@ -10,6 +10,20 @@ class Base:
     """ Private class attribute """
     __nb_objects = 0
 
+    @staticmethod
+    def to_json_string(list_dictionaries):
+
+        """ static method that returns the JSON string representation
+            of list_dictionaries
+            Args:
+                  list_dictinaries: a list of dictionaries
+        """
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
+
+
     def __init__(self, id=None):
 
         """ class constructor
@@ -23,16 +37,3 @@ class Base:
             self.id = self.__class__.__nb_objects
         else:
             self.id = id
-
-    @staticmethod
-    def to_json_string(list_dictionaries):
-
-        """ static method that returns the JSON string representation
-            of list_dictionaries
-            Args:
-                  list_dictinaries: a list of dictionaries
-        """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
-        else:
-            return json.dumps(list_dictionaries)
