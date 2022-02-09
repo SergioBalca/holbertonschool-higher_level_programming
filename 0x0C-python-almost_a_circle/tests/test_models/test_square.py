@@ -45,3 +45,15 @@ class TestSquare(unittest.TestCase):
             Square(5, -2, 0, 2)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(2, 0, float('Nan'), 3)
+
+    def test_to_dictionary(self):
+
+        "Test for to_dictionary method"
+
+        s_1 = Square(2, 3, 4, 10)
+        s1_dictionary = s_1.to_dictionary()
+        result = {'id': 10, 'size': 2, 'x': 3, 'y': 4}
+        s_2 = Square(**s1_dictionary)
+
+        self.assertEqual(s1_dictionary, result)
+        self.assertEqual(s_2.to_dictionary(), result)
