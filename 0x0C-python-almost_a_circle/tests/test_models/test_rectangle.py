@@ -75,3 +75,12 @@ class TestRectangle(unittest.TestCase):
         result = {'id': 5, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
         self.assertEqual(r1_dictionary, result)
         self.assertEqual(r_2.to_dictionary(), result)
+
+    def test__str__(self):
+
+        """Test for __str__ method"""
+
+        r_1 = Rectangle(1, 2, 3, 4, 5)
+        result = "[Rectangle] (5) 3/4 - 1/2"
+
+        self.assertEqual(str(r_1), result)
