@@ -4,6 +4,8 @@ from models.base import Base
 import unittest
 import pycodestyle
 
+from models.rectangle import Rectangle
+
 """module that contains unittests for Base class"""
 
 """TestBase class that inherits from unittest.Testcase class"""
@@ -16,8 +18,8 @@ class TestBase(unittest.TestCase):
         """checks pep8 style guide on every file"""
         pep8style = pycodestyle.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py'])
-        self.assertEqual(result.total_errors, 0, "Found code style error (and warnings).")
-
+        msg = "Found code style error (and warnings)."
+        self.assertEqual(result.total_errors, 0, msg)
 
     def test_id(self):
 
@@ -32,3 +34,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base_2.id, 1)
         self.assertEqual(base_3.id, -2)
         self.assertEqual(base_4.id, 2)
+
+    def test_to_json_string(self):
+
+        "Test for to_json_string method"
+
+        r_1 = Rectangle(10, 7, 2, 8, 6)
+        dict_r1 = r_1.to_dictionary()
+        result = '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]'
+
+        self.assertEqual(Base.to_json_string([dict_r1]), result)
