@@ -44,3 +44,14 @@ class Base:
         """ class method that writes the JSON string
             representation of list_obj to a file
         """
+
+    @staticmethod
+    def from_json_string(json_string):
+
+        """ static method that returns the list of the
+            JSON string representation json_string
+        """
+        if json_string is None or len(json_string) == 0:
+            empty_list = []
+            return empty_list
+        return json.loads(json_string)
