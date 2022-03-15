@@ -5,4 +5,5 @@
 -- The database name is passed as argumento of mysql command
 SELECT score, name
 FROM second_table
-WHERE name IS NOT NULL;
+WHERE name IS NOT NULL
+ORDER BY score DESC;
