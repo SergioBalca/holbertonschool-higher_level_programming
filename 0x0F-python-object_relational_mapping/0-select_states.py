@@ -7,30 +7,28 @@
 import sys
 import MySQLdb
 
-user_name = sys.argv[1]
-password = sys.argv[2]
-db_name = sys.argv[3]
+if __name__ == "__main__":
+    user_name = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
 
 
-""" To connect to the MYSQL server on port 3306 (default) """
-con = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=user_name,
-        passwd=password,
-        db=db_name
-     )
+    """ To connect to the MYSQL server on port 3306 (default) """
+    con = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=user_name,
+            passwd=password,
+            db=db_name
+        )
 
-""" To get a cursor """
-cur = con.cursor()
-cur.execute("SELECT states.id, states.name FROM states ORDER BY states.id ASC")
+    """ To get a cursor """
+    cur = con.cursor()
+    cur.execute("SELECT states.id, states.name FROM states ORDER BY states.id ASC")
 
-""" Fetchall to get the results """
-rows = cur.fetchall()
-for row in rows:
-    print(row)
-cur.close()
-con.close()
-
-if __name__ == "0-select_states":
-    0-select_states()
+    """ Fetchall to get the results """
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    con.close()
