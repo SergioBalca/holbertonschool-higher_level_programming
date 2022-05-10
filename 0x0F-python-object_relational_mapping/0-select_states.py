@@ -12,7 +12,6 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-
     """ To connect to the MYSQL server on port 3306 (default) """
     con = MySQLdb.connect(
             host="localhost",
@@ -24,7 +23,7 @@ if __name__ == "__main__":
 
     """ To get a cursor """
     cur = con.cursor()
-    cur.execute("SELECT states.id, states.name FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
     """ Fetchall to get the results """
     rows = cur.fetchall()
