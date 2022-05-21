@@ -7,6 +7,7 @@
 from urllib.request import urlopen, Request
 from sys import argv
 
+
 url = argv[1]
 with urlopen(url) as r:
     body = r.info()
