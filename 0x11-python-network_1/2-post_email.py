@@ -15,8 +15,8 @@ if __name__ == "__main__":
     headers['Content-type'] = 'appplication/email'
     
     """Post request encoded data"""
-    post_data = urllib.parse.urlencode({'email': email}).encode('utf-8')
+    post_data = urllib.parse.urlencode({'email': email}).encode('ascii')
     
     """Automatically calls POST method because request has data"""
     with urlopen(url, data=post_data) as post_response:
-        print(post_response.read())
+        print(post_response.read().decode('utf-8'))
