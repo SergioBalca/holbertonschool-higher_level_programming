@@ -8,15 +8,15 @@ from urllib.request import urlopen, Request
 import urllib.parse
 from sys import argv
 
-
-url = argv[1]
-email = argv[2]
-headers = {}
-headers['Content-type'] = 'appplication/email'
-
-"""Post request encoded data"""
-post_data = urllib.parse.urlencode({'email': email}).encode('utf-8')
-
-"""Automatically calls POST method because request has data"""
-with urlopen(url, data=post_data) as post_response:
-    print(post_response.read())
+if __name__ == "__main__":
+    url = argv[1]
+    email = argv[2]
+    headers = {}
+    headers['Content-type'] = 'appplication/email'
+    
+    """Post request encoded data"""
+    post_data = urllib.parse.urlencode({'email': email}).encode('utf-8')
+    
+    """Automatically calls POST method because request has data"""
+    with urlopen(url, data=post_data) as post_response:
+        print(post_response.read())
