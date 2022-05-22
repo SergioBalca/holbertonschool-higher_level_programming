@@ -8,7 +8,9 @@ from sys import argv
 
 
 if __name__ == "__main__":
-
-    url = argv[1]
-    response = get(url)
-    print(response.headers['X-Request-Id'])
+    try:
+        url = argv[1]
+        response = get(url)
+        print(response.headers['X-Request-Id'])
+    except:
+        pass
