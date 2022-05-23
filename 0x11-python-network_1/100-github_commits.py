@@ -18,8 +18,9 @@ if __name__ == "__main__":
         """response is a list of dictionaries"""
         count = 0
         while count < 10:
-            print('{}: {}'.format(r.get('sha'),
-                                  r.get('commit').get('author').get('name')))
+            dic = r[count]
+            print('{}: {}'.format(dic.get('sha'),
+                                  dic.get('commit').get('author').get('name')))
             count += 1
     except Exception:
         pass
