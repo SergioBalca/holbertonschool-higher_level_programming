@@ -22,11 +22,9 @@ if __name__ == "__main__":
     try:
         json = response.json()
 
-        if header != 'application/json':
-            print('Not a valid JSON')
-        elif len(json) == 0:
-            print('No result')
-        else:
+        if len(json) == 2:
             print('[{}] {}'.format(json['id'], json['name']))
-    except Exception:
-        pass
+        else:
+            print('No result')
+    except ValueError as err:
+        print('Not a valid JSON')
