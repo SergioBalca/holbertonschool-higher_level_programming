@@ -15,7 +15,9 @@ if __name__ == "__main__":
 
     r = get(url).json()
     """response is a list of dictionaries"""
-
-    for dic in r[:10]:
+    count = 0
+    while count < 10:
+        dic = r[count]
         print('{}: {}'.format(dic.get('sha'),
                               dic.get('commit').get('author').get('name')))
+        count += 1
