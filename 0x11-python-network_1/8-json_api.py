@@ -19,11 +19,14 @@ if __name__ == "__main__":
 
     response = post(url, data={'q': letter})
     header = response.headers['content-type']
-    json = response.json()
+    try:
+        json = response.json()
 
-    if header != 'application/json':
-        print('Not a valid JSON')
-    elif len(json) == 0:
-        print('No result')
-    else:
-        print('[{}] {}'.format(json['id'], json['name']))
+        if header != 'application/json':
+            print('Not a valid JSON')
+        elif len(json) == 0:
+            print('No result')
+        else:
+            print('[{}] {}'.format(json['id'], json['name']))
+    except Exception:
+        pass
