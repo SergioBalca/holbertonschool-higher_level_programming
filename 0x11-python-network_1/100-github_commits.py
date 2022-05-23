@@ -11,16 +11,11 @@ if __name__ == "__main__":
 
     repo = argv[1]
     owner = argv[2]
-    url = "https://api.github.com/repos/"+owner+"/"+repo+"/commits"
+    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
 
-    try:
-        r = get(url).json()
-        """response is a list of dictionaries"""
-        count = 0
-        while count < 10:
-            dic = r[count]
-            print('{}: {}'.format(dic.get('sha'),
-                                  dic.get('commit').get('author').get('name')))
-            count += 1
-    except Exception:
-        pass
+    r = get(url).json()
+    """response is a list of dictionaries"""
+
+    for dic in r[:10]:
+        print('{}: {}'.format(dic.get('sha'),
+                              dic.get('commit').get('author').get('name')))
