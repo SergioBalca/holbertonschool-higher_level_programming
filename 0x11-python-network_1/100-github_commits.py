@@ -13,9 +13,12 @@ if __name__ == "__main__":
     owner = argv[2]
     url = "https://api.github.com/repos/"+owner+"/"+repo+"/commits"
 
-    r = get(url).json()
-    """response is a list of dictionaries"""
-    count = 0
-    while count < 10:
-        print(r[count]['sha']+": "+r[count]['commit']['author']['name'])
-        count += 1
+    try:
+        r = get(url).json()
+        """response is a list of dictionaries"""
+        count = 0
+        while count < 10:
+            print(r[count]['sha']+": "+r[count]['commit']['author']['name'])
+            count += 1
+    except Exception:
+        pass
