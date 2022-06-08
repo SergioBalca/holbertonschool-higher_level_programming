@@ -16,7 +16,7 @@ def roman_to_int(roman_string):
     """function that converts Roman numerals to integer values"""
     int_value = 0
 
-    if type(roman_string) is not str or roman_string == None:
+    if type(roman_string) is not str or roman_string is None:
         return 0
 
     for count, roman in enumerate(roman_string):
